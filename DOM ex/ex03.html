@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM exercicios 3</title>
+</head>
+ 
+<body>
+
+    <!-- colote de usuário (usando input) e altere a cor do "quadrado" dessa data de calendário dinamicamente.
+         Por exemplo, se o usuário escolher 01/10/2022 - o quadrado com o dia 01 deve mudar de cor. -->
+
+        <input id="dia" placeholder="selecione uma data..." onkeyup="calendario()"> 
+
+    <table class="calendar">
+
+        <thead>
+            
+            <tr>
+                <th>Seg</th>
+                <th>Ter</th>
+                <th>Qua</th>
+                <th>Qui</th>
+                <th>Sex</th>
+                <th>Sab</th>
+                <th>Dom</th>
+            </tr>  
+
+        </thead>
+
+        <tbody>
+
+            <tr>
+                <td></td>
+                <td></td>
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+                <td>4</td>
+                <td>5</td>
+            </tr>
+
+            <tr>
+                <td>6</td>
+                <td>7</td>
+                <td>8</td>
+                <td>9</td>
+                <td>10</td>
+                <td>11</td>
+                <td>12</td>
+            </tr>
+
+            <tr>
+                <td>13</td>
+                <td>14</td>
+                <td>15</td>
+                <td>16</td>
+                <td>17</td>
+                <td>18</td>
+                <td>19</td>
+            </tr>
+
+            <tr>
+                <td>20</td>
+                <td>21</td>
+                <td>22</td>
+                <td>23</td>
+                <td>24</td>
+                <td>25</td>
+                <td>26</td>
+            </tr>
+
+            <tr>
+                <td>27</td>
+                <td>28</td>
+                <td>29</td>
+                <td>30</td>
+                <td>31</td>
+            </tr>
+
+        </tbody>
+
+    </table>
+
+    
+    <style>
+        
+        .aaa {
+
+            font-size: 20px;
+            color:brown;
+            
+
+        }
+        
+        .calendar th,
+        td {
+
+            border: solid 1px rgb(255, 148, 148);
+            width: 80px;
+            height: 46px;
+            cursor: pointer;
+                
+
+        }
+        
+        .calendar {
+
+            text-align: center;
+            font-size: 20px;
+
+        }
+       
+
+    </style>
+
+
+<script>
+
+    function calendario() {
+    
+    console.log("entrado")
+    var dia = document.querySelector("#dia");
+    var datas = document.querySelector(".calendar");
+    var calendar = datas.querySelectorAll("td");
+    var novaLista = [];
+    
+    for (var i = 0; i < calendar.length; i++) {
+    var diaAtual = calendar[i].textContent;
+    if (dia.value == diaAtual) {
+    var td = document.createElement("td");
+    var strong = document.createElement("strong");
+    strong.innerText = diaAtual;
+    li.appendChild(strong);
+    novaLista.push(td);
+    } else {
+        var td = document.createElement("td");
+        td.innerText = diaAtual;
+        novaLista.push(td);
+    }
+        
+    }
+    
+    datas.innerText = "";
+    for (var i = 0; i < novaLista.length; i++) {
+    
+        lista.appendChild(novaLista[i]);
+    
+    }
+    
+    console.log(novaLista)
+    
+    }
+    
+    </script>
+
+</body>
+
+</html>
